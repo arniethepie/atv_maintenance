@@ -5,6 +5,9 @@ while read -r p; do
   echo "Updating proxy settings"
   # change for proxy ip
   adb shell -n settings put global http_proxy 192.168.1.190:9100
+  echo "Wait 30 seconds and check proxy settings"
+  sleep 30
+  adb shell -n settings get global http_proxy
   # echo "Reset proxy settings to default"
   # adb shell settings put global http_proxy :0
   echo "Rebooting atv and disconnecting"
